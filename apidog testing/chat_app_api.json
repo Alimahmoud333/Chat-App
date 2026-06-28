@@ -1,0 +1,1911 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Default module",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/api/profile": {
+      "get": {
+        "summary": "show profile ",
+        "deprecated": false,
+        "description": "Retrieve the authenticated user’s profile details.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/updateProfile": {
+      "post": {
+        "summary": "Update Profile",
+        "deprecated": false,
+        "description": "Update the authenticated user’s profile information.",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "hassan11",
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "name": "hassan11"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/logout": {
+      "get": {
+        "summary": "Logout",
+        "deprecated": false,
+        "description": "Log out the current user.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/change-password": {
+      "post": {
+        "summary": "change password",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "current_password": {
+                    "example": "password123",
+                    "type": "string"
+                  },
+                  "new_password": {
+                    "example": "password12345",
+                    "type": "string"
+                  },
+                  "new_password_confirmation": {
+                    "example": "password12345",
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "current_password": "password123",
+                "new_password": "password12345",
+                "new_password_confirmation": "password12345"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/verify-otp": {
+      "post": {
+        "summary": "verify otp",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "phone": {
+                    "example": "+96170762902",
+                    "type": "string"
+                  },
+                  "otp": {
+                    "example": "896921",
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "phone": "+96170762902",
+                "otp": "896921"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api//resend-otp": {
+      "post": {
+        "summary": "resend otp",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/reset-password": {
+      "post": {
+        "summary": "reset-password",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/son",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "phone": {
+                    "example": "+96170762902",
+                    "type": "string"
+                  },
+                  "otp": {
+                    "example": "805446",
+                    "type": "string"
+                  },
+                  "password": {
+                    "example": "password123",
+                    "type": "string"
+                  },
+                  "password_confirmation": {
+                    "example": "password123",
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "phone": "+96170762902",
+                "otp": "805446",
+                "password": "password123",
+                "password_confirmation": "password123"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/forgot-password": {
+      "post": {
+        "summary": "forgot-password",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "phone": {
+                    "example": "+96170762902",
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "phone": "+96170762902"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/login": {
+      "post": {
+        "summary": "login",
+        "deprecated": false,
+        "description": "Log in with email and password.",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "example": "try123@gmail.com",
+                    "type": "string"
+                  },
+                  "password": {
+                    "example": "password123",
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "email": "try123@gmail.com",
+                "password": "password123"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/register": {
+      "post": {
+        "summary": "register",
+        "deprecated": false,
+        "description": "Register a new user account",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "try",
+                    "type": "string"
+                  },
+                  "email": {
+                    "example": "try123@gmail.com",
+                    "type": "string"
+                  },
+                  "password": {
+                    "example": "password12345",
+                    "type": "string"
+                  },
+                  "password_confirmation": {
+                    "example": "password12345",
+                    "type": "string"
+                  },
+                  "phone": {
+                    "example": "+96170762902",
+                    "type": "string"
+                  },
+                  "bio": {
+                    "example": "System administrator",
+                    "type": "string"
+                  },
+                  "profile_image": {
+                    "format": "binary",
+                    "type": "string",
+                    "example": "file://C:\\laravel_projects\\bookstore\\public\\storage\\bg2.jpg"
+                  },
+                  "role": {
+                    "example": "user",
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "name": "try",
+                "email": "try123@gmail.com",
+                "password": "password12345",
+                "password_confirmation": "password12345",
+                "phone": "+96170762902",
+                "bio": "System administrator",
+                "profile_image": "file://C:\\laravel_projects\\bookstore\\public\\storage\\bg2.jpg",
+                "role": "user"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/api/send-message": {
+      "post": {
+        "summary": "Send Message",
+        "deprecated": false,
+        "description": "Send a private message to another user.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "receiver_id": {
+                    "example": 2,
+                    "type": "integer"
+                  },
+                  "message": {
+                    "example": "kdk",
+                    "type": "string"
+                  },
+                  "type": {
+                    "example": "image",
+                    "type": "string"
+                  },
+                  "file": {
+                    "format": "binary",
+                    "type": "string",
+                    "example": "file://C:\\laravel_projects\\bookstore\\public\\storage\\bg1.jpg"
+                  }
+                }
+              },
+              "example": {
+                "receiver_id": 2,
+                "message": "kdk",
+                "type": "image",
+                "file": "file://C:\\laravel_projects\\bookstore\\public\\storage\\bg1.jpg"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/conversation/2": {
+      "get": {
+        "summary": "Conversation with user",
+        "deprecated": false,
+        "description": " Retrieve the conversation with a specific user.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/react-message": {
+      "post": {
+        "summary": "React to a message",
+        "deprecated": false,
+        "description": " React to a message with an emoji.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message_id": {
+                    "example": 2,
+                    "type": "integer"
+                  },
+                  "reaction": {
+                    "example": "❤️",
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "message_id": 2,
+                "reaction": "❤️"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/conversations": {
+      "get": {
+        "summary": "All Conversations",
+        "deprecated": false,
+        "description": "Get all private conversations of the authenticated user.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/search-messages": {
+      "post": {
+        "summary": "Search Messages",
+        "deprecated": false,
+        "description": "Search messages in private chats.",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "search": {
+                    "example": "dddd",
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "search": "dddd"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/delete-message/4": {
+      "delete": {
+        "summary": "Delete Message ",
+        "deprecated": false,
+        "description": "Delete a specific private message.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/delete-for-everyone/5": {
+      "delete": {
+        "summary": "Delete For EveryOne",
+        "deprecated": false,
+        "description": "Delete a message for both sender and receiver.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/users": {
+      "get": {
+        "summary": "Show Users ",
+        "deprecated": false,
+        "description": " Get a list of users available for private chat.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/typing": {
+      "post": {
+        "summary": "Typing...",
+        "deprecated": false,
+        "description": "Notify the other user that you are typing.",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "receiver_id": {
+                    "example": 2,
+                    "type": "integer"
+                  }
+                }
+              },
+              "example": {
+                "receiver_id": 2
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/create-group": {
+      "post": {
+        "summary": "Create Group",
+        "deprecated": false,
+        "description": "Create a new chat group.\n\n",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "Laraveltttt Devs",
+                    "type": "string"
+                  },
+                  "image": {
+                    "format": "binary",
+                    "type": "string",
+                    "example": "file://C:\\laravel_projects\\bookstore\\public\\storage\\logo2.jpg"
+                  },
+                  "members[]": {
+                    "example": "2",
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "name": "Laraveltttt Devs",
+                "image": "file://C:\\laravel_projects\\bookstore\\public\\storage\\logo2.jpg",
+                "members[]": "2"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/my-groups": {
+      "get": {
+        "summary": "My Groups ",
+        "deprecated": false,
+        "description": "Get all groups the user is a member of.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/group-details/2": {
+      "get": {
+        "summary": "Group Details",
+        "deprecated": false,
+        "description": "Retrieve details of a specific group.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/group-send-message/1": {
+      "post": {
+        "summary": "Group Send Message",
+        "deprecated": false,
+        "description": "Send a message in a group.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "example": "hello for all ",
+                    "type": "string"
+                  },
+                  "type": {
+                    "example": "text",
+                    "type": "string"
+                  },
+                  "latitude": {
+                    "example": 33.8938,
+                    "type": "number"
+                  },
+                  "longitude": {
+                    "example": 35.5018,
+                    "type": "number"
+                  }
+                }
+              },
+              "example": {
+                "message": "hello for all ",
+                "type": "text",
+                "latitude": 33.8938,
+                "longitude": 35.5018
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/group-messages/1": {
+      "get": {
+        "summary": "Group Messages",
+        "deprecated": false,
+        "description": "Get all messages in a group.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/group-add-member/1": {
+      "post": {
+        "summary": "Group Add Member",
+        "deprecated": false,
+        "description": " Add a member to a group.",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "example": 4,
+                    "type": "integer"
+                  }
+                }
+              },
+              "example": {
+                "user_id": 4
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/group-remove-member/1/4": {
+      "delete": {
+        "summary": "Delete Member",
+        "deprecated": false,
+        "description": "Remove a member from a group.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/delete-group/2": {
+      "delete": {
+        "summary": "Delete Group ",
+        "deprecated": false,
+        "description": "Delete a group.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/pin-chat/2": {
+      "post": {
+        "summary": "Pin Chat ",
+        "deprecated": false,
+        "description": "Pin a chat to the top.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/unpin-chat/2": {
+      "post": {
+        "summary": "Unpin Chat",
+        "deprecated": false,
+        "description": "Unpin a chat.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/archive-chat/2": {
+      "post": {
+        "summary": "Archive Chat",
+        "deprecated": false,
+        "description": " Archive a chat.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/unarchive-chat/2": {
+      "post": {
+        "summary": "UnArchive Chat",
+        "deprecated": false,
+        "description": " Unarchive a chat.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/mute-chat/2": {
+      "post": {
+        "summary": "Mute Chat",
+        "deprecated": false,
+        "description": "Mute notifications for a chat.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/unmute-chat/2": {
+      "post": {
+        "summary": "UnMute Chat",
+        "deprecated": false,
+        "description": "Unmute notifications for a chat.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/block-user/2": {
+      "post": {
+        "summary": "Block User",
+        "deprecated": false,
+        "description": "Block a user.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/unblock-user/2": {
+      "post": {
+        "summary": "UnBlock User",
+        "deprecated": false,
+        "description": " Unblock a user.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/dashboard": {
+      "get": {
+        "summary": "dashboard",
+        "deprecated": false,
+        "description": "View admin dashboard statistics.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/users": {
+      "get": {
+        "summary": "Users List",
+        "deprecated": false,
+        "description": " List all users.",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/users/3/ban": {
+      "put": {
+        "summary": "Ban User ",
+        "deprecated": false,
+        "description": "Ban a user.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/users/4/unban": {
+      "put": {
+        "summary": "UnBan User",
+        "deprecated": false,
+        "description": "Unban a user.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/users/8": {
+      "delete": {
+        "summary": "Delete User",
+        "deprecated": false,
+        "description": "Permanently delete a user.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/groups": {
+      "get": {
+        "summary": "Groups List",
+        "deprecated": false,
+        "description": " List all groups.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "search": {
+                    "example": "Laravel Devs",
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "search": "Laravel Devs"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/groups/1": {
+      "get": {
+        "summary": "Show Group",
+        "deprecated": false,
+        "description": "Show details of a specific group.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/groups/3": {
+      "delete": {
+        "summary": "Delete Group",
+        "deprecated": false,
+        "description": "Delete a group.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/groups/1/members/1": {
+      "delete": {
+        "summary": "Remove Member",
+        "deprecated": false,
+        "description": "Remove a member from a group.",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/groups/2/members/1/make-admin": {
+      "put": {
+        "summary": "Make Group Admin",
+        "deprecated": false,
+        "description": "Promote a member to group admin.",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "examples": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    },
+    "/api/admin/groups/1/messages": {
+      "delete": {
+        "summary": "Delete Group Messages",
+        "deprecated": false,
+        "description": "Delete all messages in a group.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "application/json",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "securitySchemes": {
+      "bearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "servers": [],
+  "security": []
+}
