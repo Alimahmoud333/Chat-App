@@ -1,59 +1,575 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Real-Time Chat Application API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A production-ready RESTful API built with Laravel for a modern real-time chat application. The project provides secure authentication, private messaging, group conversations, AI-powered chat, push notifications, role-based authorization, and real-time communication using Laravel Reverb.
 
-## About Laravel
+The API follows RESTful architecture and includes complete authentication, user management, chat management, group management, administration features, and real-time broadcasting.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Authentication
 
-## Learning Laravel
+A complete authentication system built using Laravel Sanctum.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Implemented Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* User Registration
+* User Login
+* Secure Logout
+* User Profile
+* Update Profile
+* Change Password
+* Forgot Password
+* Reset Password
+* OTP Verification
+* Resend OTP
+* Secure API Authentication with Laravel Sanctum
 
-## Laravel Sponsors
+### OTP Verification
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+OTP verification is implemented using Twilio Verify.
 
-### Premium Partners
+The verification system supports:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+* Account Verification
+* OTP Resend
+* Forgot Password Verification
+* Password Reset Verification
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# User Profile
 
-## Code of Conduct
+Authenticated users can:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* View Profile
+* Update Profile Information
+* Upload Profile Image
+* Update Biography
+* Update Phone Number
+* Change Password
+* Logout Securely
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Security
 
-## License
+The application follows Laravel security best practices.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Implemented security features include:
+
+* Laravel Sanctum Authentication
+* Role-Based Authorization
+* Middleware Protection
+* Request Validation
+* Password Hashing
+* OTP Verification
+* Protected API Routes
+* Secure Access Tokens
+
+---
+
+# User Roles
+
+The application supports two user roles.
+
+## User
+
+A regular user can:
+
+* Send Private Messages
+* Join Group Conversations
+* Chat with the AI Assistant
+* Manage Chat Settings
+* Update Profile Information
+
+## Admin
+
+Administrators have additional privileges.
+
+Admin features include:
+
+* Dashboard
+* User Management
+* Ban Users
+* Unban Users
+* Delete Users
+* View All Groups
+* Delete Groups
+* Remove Group Members
+* Promote Group Members to Admin
+* Delete Group Messages
+
+---
+
+# Private Chat
+
+The application provides a complete one-to-one messaging system.
+
+Features include:
+
+* Send Messages
+* Retrieve Conversations
+* Conversation History
+* Delete Messages
+* Delete Messages for Everyone
+* Search Messages
+* Typing Indicator
+* Message Reactions
+* Seen Status
+* Online Status
+* Last Seen
+
+---
+
+# Group Chat
+
+The application supports real-time group conversations.
+
+Features include:
+
+* Create Group
+* View My Groups
+* View Group Details
+* Send Group Messages
+* Retrieve Group Messages
+* Add Members
+* Remove Members
+* Delete Groups
+
+---
+
+# Chat Settings
+
+Each user has personalized chat preferences.
+
+Supported settings include:
+
+* Pin Chat
+* Unpin Chat
+* Archive Chat
+* Unarchive Chat
+* Mute Chat
+* Unmute Chat
+* Block User
+* Unblock User
+
+---
+
+# AI Chat Assistant
+
+The application integrates the OpenAI API to provide an AI assistant inside the chat application.
+
+Features include:
+
+* AI Chat Endpoint
+* AI Message Generation
+* Store User Messages
+* Store AI Responses
+* Real-Time AI Replies
+
+---
+
+# Push Notifications
+
+Push notifications are implemented using Firebase Cloud Messaging (FCM).
+
+Features include:
+
+* Device Token Registration
+* Firebase Admin SDK Integration
+* Push Notifications
+* Custom Firebase Notification Service
+
+---
+
+# Real-Time Communication
+
+Real-time communication is powered by Laravel Reverb.
+
+Implemented events include:
+
+* Private Messages
+* AI Message Broadcasting
+* Typing Indicator
+* Message Delivered
+* Message Seen
+* Online User Status
+
+---
+
+# REST API Modules
+
+## Authentication
+
+* Register
+* Login
+* Logout
+* Verify OTP
+* Resend OTP
+* Forgot Password
+* Reset Password
+* Change Password
+
+## User Profile
+
+* Get Profile
+* Update Profile
+
+## Private Chat
+
+* Get Users
+* Get Conversations
+* Get Conversation
+* Send Message
+* Delete Message
+* Delete Message for Everyone
+* Search Messages
+* Typing Indicator
+* React to Message
+
+## Group Chat
+
+* Create Group
+* My Groups
+* Group Details
+* Send Group Message
+* Retrieve Group Messages
+* Add Member
+* Remove Member
+* Delete Group
+
+## Chat Settings
+
+* Pin Chat
+* Unpin Chat
+* Archive Chat
+* Unarchive Chat
+* Mute Chat
+* Unmute Chat
+* Block User
+* Unblock User
+
+## AI
+
+* AI Chat
+
+## Admin
+
+* Dashboard
+* User Management
+* Group Management
+
+---
+
+# Technology Stack
+
+## Backend
+
+* Laravel
+* PHP
+* MySQL
+
+## Authentication
+
+* Laravel Sanctum
+* Twilio Verify API
+
+## Real-Time Communication
+
+* Laravel Reverb
+* Laravel Broadcasting
+* Laravel Events
+* Laravel Echo (Frontend)
+
+## Push Notifications
+
+* Firebase Cloud Messaging (FCM)
+* Firebase Admin SDK
+
+## Artificial Intelligence
+
+* OpenAI API
+
+---
+
+# Project Structure
+
+```text
+app/
+├── Events/
+├── Http/
+│   ├── Controllers/
+│   └── Middleware/
+├── Models/
+└── Providers/
+
+bootstrap/
+config/
+database/
+public/
+resources/
+routes/
+storage/
+```
+
+---
+
+# API Documentation
+
+The repository includes an Apidog collection containing all available API endpoints.
+
+Import the Apidog collection to test every endpoint of the application.
+
+---
+
+# Installation
+
+Clone the repository.
+
+```bash
+git clone https://github.com/yourusername/chat-app-api.git
+
+cd chat-app-api
+```
+
+Install PHP dependencies.
+
+```bash
+composer install
+```
+
+Create the environment file.
+
+```bash
+cp .env.example .env
+```
+
+Generate the application key.
+
+```bash
+php artisan key:generate
+```
+
+Create the storage symbolic link.
+
+```bash
+php artisan storage:link
+```
+
+Run database migrations.
+
+```bash
+php artisan migrate
+```
+
+---
+
+# Required Packages
+
+## Laravel Sanctum
+
+Install Sanctum.
+
+```bash
+composer require laravel/sanctum
+```
+
+Publish Sanctum configuration.
+
+```bash
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+```
+
+Run migrations.
+
+```bash
+php artisan migrate
+```
+
+---
+
+## Twilio Verify
+
+Install the Twilio PHP SDK.
+
+```bash
+composer require twilio/sdk
+```
+
+Configure Twilio inside your `.env` file.
+
+```env
+TWILIO_SID=
+TWILIO_TOKEN=
+TWILIO_VERIFY_SERVICE=
+```
+
+---
+
+## Laravel Reverb
+
+Install Laravel Reverb.
+
+```bash
+composer require laravel/reverb
+```
+
+Install Reverb.
+
+```bash
+php artisan reverb:install
+```
+
+Start the Reverb server.
+
+```bash
+php artisan reverb:start
+```
+
+---
+
+## Laravel Echo (Frontend)
+
+Laravel Echo is required by the React frontend to receive real-time events.
+
+```bash
+npm install laravel-echo pusher-js
+```
+
+---
+
+## Firebase Cloud Messaging
+
+Install the Firebase package.
+
+```bash
+composer require kreait/laravel-firebase
+```
+
+Publish the configuration.
+
+```bash
+php artisan vendor:publish --provider="Kreait\Laravel\Firebase\ServiceProvider"
+```
+
+Add your Firebase service account JSON file and configure its path inside `.env`.
+
+Example:
+
+```env
+FIREBASE_CREDENTIALS=/path/to/firebase_credentials.json
+```
+
+---
+
+## OpenAI
+
+Install the Laravel OpenAI package.
+
+```bash
+composer require openai-php/laravel
+```
+
+Publish the configuration.
+
+```bash
+php artisan vendor:publish --provider="OpenAI\Laravel\ServiceProvider"
+```
+
+Configure your API key.
+
+```env
+OPENAI_API_KEY=
+```
+
+---
+
+# Environment Variables
+
+Configure the following services inside the `.env` file.
+
+```env
+APP_NAME=
+APP_ENV=
+APP_KEY=
+APP_DEBUG=true
+APP_URL=
+
+DB_CONNECTION=
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+
+BROADCAST_CONNECTION=reverb
+QUEUE_CONNECTION=database
+
+SANCTUM_STATEFUL_DOMAINS=
+
+TWILIO_SID=
+TWILIO_TOKEN=
+TWILIO_VERIFY_SERVICE=
+
+OPENAI_API_KEY=
+
+FIREBASE_CREDENTIALS=
+
+REVERB_APP_ID=
+REVERB_APP_KEY=
+REVERB_APP_SECRET=
+REVERB_HOST=
+REVERB_PORT=
+REVERB_SCHEME=http
+```
+
+---
+
+# Running the Application
+
+Start the Laravel server.
+
+```bash
+php artisan serve
+```
+
+Start the Reverb server.
+
+```bash
+php artisan reverb:start
+```
+
+Start the queue worker.
+
+```bash
+php artisan queue:work
+```
+
+---
+
+# API Testing
+
+The repository contains a complete Apidog collection for testing all available API endpoints.
+
+Simply import the collection into Apidog and start testing.
+
+---
+
+# Future Improvements
+
+* Voice Messages
+* File Sharing
+* Video Calls
+* End-to-End Encryption
+* Message Editing
+* Message Forwarding
+* Stories
+* Multi-Device Synchronization
+
+---
+
+# License
+
+This project was developed for educational purposes and as part of my software engineering portfolio.
