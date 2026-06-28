@@ -570,6 +570,8 @@ Simply import the collection into Apidog and start testing.
 
 ---
 
-# License
+# Author
 
-This project was developed for educational purposes and as part of my software engineering portfolio.
+Ali Mahmoud
+
+
